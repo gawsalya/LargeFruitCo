@@ -12,9 +12,10 @@ public class Main {
         String [] splitFruits = fruits.split(" ");
 
         List<Fruit> toPurchase = new ArrayList<>();
+        ProductCollection products = new FruitCollection();
 
         for (int i = 0; i < splitFruits.length; i++) {
-            if (options.containsKey(splitFruits[i])) {
+            if (products.exists(splitFruits[i])) {
                 toPurchase.add(options.get(splitFruits[i]));
             } else {
                 System.out.println("Fruit does not exist");
@@ -25,20 +26,7 @@ public class Main {
         allItems.forEach((key, value) -> System.out.println(value + " x " + key));
         System.out.println("Sub-total £" + String.format("%.2f", basket.getTotalPrice()));
 
-        double total = discountPrice(allItems, options);
 
-    }
-
-    public static double discountPrice(Map<String, Integer> items, Map<String, Fruit> fruitOptions) {
-        System.out.println(items);
-        items.forEach((key,value) -> {
-            if (key.equals("Apple")) {
-                Fruit temp = (Fruit) fruitOptions.get("Apple");
-                double discount = temp.getPrice() * 0.1 * value;
-                System.out.println(discount);
-            }
-        });
-        return 0.00;
     }
 
     //All Apples are currently 10% off
@@ -46,7 +34,7 @@ public class Main {
     //If you buy 3 or more Mangos you get 1 Apple free
     //If you spend more than £5 (once all other discounts are taken into account) you get a 2% big spender discount
 
-    public static Map fruitChoices() {
+    public static Map<String, Fruit> fruitChoices() {
         Map<String, Fruit> fruitMap = new HashMap<>();
         fruitMap.put("Apple", new Fruit("Apple", 0.80));
         fruitMap.put("Orange", new Fruit("Orange", 0.75));
