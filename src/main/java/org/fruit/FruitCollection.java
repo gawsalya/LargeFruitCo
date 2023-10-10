@@ -21,16 +21,16 @@ public class FruitCollection implements ProductCollection{
     @Override
     public Fruit select(String name) {
         if ("Apple".equalsIgnoreCase(name)) {
-            return new Fruit ("Apple", 0.80);
+            return new Fruit ("Apple", 80);
         }
         if ("Orange".equalsIgnoreCase(name)) {
-            return new Fruit ("Orange", 0.75);
+            return new Fruit ("Orange", 75);
         }
         if ("Mango".equalsIgnoreCase(name)) {
-            return new Fruit ("Mango", 2.50);
+            return new Fruit ("Mango", 250);
         }
         if ("Cherry".equalsIgnoreCase(name)) {
-            return new Fruit ("Cherry", 0.24);
+            return new Fruit ("Cherry", 24);
         }
         return null;
     }

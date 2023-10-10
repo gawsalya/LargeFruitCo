@@ -5,10 +5,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class FruitTest {
-    Fruit testFruit = new Fruit ("fake", 0.00);
+    Fruit testFruit = new Fruit ("fake", 500);
     @Test
-    void apple() {
+    void getFakeName() {
         assert testFruit.getName().equals("fake");
-
     }
+
+    @Test
+    void getFakePrice() {
+        assert testFruit.getPrice() == 500;
+    }
+
 }

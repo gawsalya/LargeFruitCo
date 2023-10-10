@@ -2,9 +2,9 @@ package org.fruit;
 
 public class Fruit {
     String name;
-    double price;
+    Integer price;
 
-    public Fruit(String name, double price) {
+    public Fruit(String name, Integer price) {
         this.name = name;
         this.price = price;
     }
@@ -17,11 +17,11 @@ public class Fruit {
         this.name = name;
     }
 
-    public double getPrice() {
+    public Integer getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Integer price) {
         this.price = price;
     }
 }

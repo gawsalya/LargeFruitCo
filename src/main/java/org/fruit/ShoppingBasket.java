@@ -11,8 +11,8 @@ public class ShoppingBasket {
         this.basket = basket;
     }
 
-    public double getTotalPrice() {
-        double price = 0.00;
+    public Integer getTotalPrice() {
+        Integer price = 0;
         for (int i = 0; i < basket.size(); i++) {
             Fruit tempFruit = basket.get(i);
             price += tempFruit.getPrice();
@@ -23,7 +23,7 @@ public class ShoppingBasket {
     public Map<String,Integer> allItems() {
         Map<String, Integer> countMap = new HashMap<>();
         for (int i = 0; i < basket.size(); i++) {
-            Fruit tempFruit = (Fruit) basket.get(i);
+            Fruit tempFruit = basket.get(i);
             if (countMap.containsKey(tempFruit.getName())) {
                 countMap.put(tempFruit.getName(), countMap.get(tempFruit.getName()) + 1);
             } else {
