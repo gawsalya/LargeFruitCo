@@ -1,5 +1,7 @@
 package org.fruit;
 
+import org.fruit.discounts.DiscountCollection;
+
 import java.util.*;
 
 public class Main {
@@ -24,7 +26,6 @@ public class Main {
         Map<String, Integer> allItems = basket.allItems();
         allItems.forEach((key, value) -> System.out.println(value + " x " + key));
         System.out.println("Sub-total £" + (float) basket.getTotalPrice()/100);
-
 
     }
 

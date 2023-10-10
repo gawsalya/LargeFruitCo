@@ -29,4 +29,25 @@ class AppleDiscountTest {
     void testDiscountString() {
         assert fake.discountString().equals("Apple Discount -32p");
     }
+
+    Map<String, Integer> fakeFruitsTwo() {
+        Map<String, Integer> fakeFruitTwo = new HashMap<>();
+        fakeFruitTwo.put("Apple", 0);
+        fakeFruitTwo.put("Cherry", 3);
+        return fakeFruitTwo;
+    }
+
+    AppleDiscount fakeTwo = new AppleDiscount(fakeFruitsTwo());
+
+
+    @Test
+    void testNoDiscount() {
+        assert fakeTwo.discountAmount() == 0;
+    }
+
+    @Test
+    void testNoDiscountString() {
+        assert fakeTwo.discountString().equals("");
+    }
+
 }
