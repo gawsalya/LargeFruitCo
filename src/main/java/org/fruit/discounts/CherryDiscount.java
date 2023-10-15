@@ -9,14 +9,14 @@ public class CherryDiscount {
         this.allFruits = allFruits;
     }
 
-    Integer discountAmount() {
+    public Integer discountAmount() {
         if (allFruits.containsKey("Cherry") && allFruits.get("Cherry") > 4) {
             return 50;
         }
         return 0;
     }
 
-    String discountString() {
+    public String discountString() {
         Integer discount = discountAmount();
         if (discount > 0) {
             return "Cherry Discount -" + discountAmount() + "p";

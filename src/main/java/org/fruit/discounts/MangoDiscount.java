@@ -10,20 +10,19 @@ public class MangoDiscount {
         this.allFruits = allFruits;
     }
 
-    Integer discountAmount() {
+    public Integer discountAmount() {
         if (allFruits.containsKey("Mango") && allFruits.get("Mango") >= 3 && allFruits.containsKey("Apple")) {
             return 80;
         }
         return 0;
     }
 
-    String discountString() {
+    public String discountString() {
         Integer discount = discountAmount();
         if (discount > 0 && allFruits.containsKey("Apple")) {
             return "1 Free Apple -" + discountAmount() + "p";
         }
         return "";
     }
-    //If you buy 3 or more Mangos you get 1 Apple free
 
 }
